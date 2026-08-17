@@ -28,7 +28,7 @@
 
             <div class="divider">♡</div>
 
-            <div class="script-text">Дорогие семья и друзья!</div>
+            <div class="script-text" id="guest-name">Дорогие семья и друзья!</div>
             <p style="font-size: 1rem;">Мы с радостью приглашаем Вас<br>разделить с нами этот особенный день.<br>Ваше присутствие сделает наш<br>праздник еще более важным.</p>
         </div>
         <div class="section" style="background-color: #f0ece3;">
@@ -63,7 +63,7 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <p class="time">14:50</p>
-                        <p class="event">Церемония в ЗАГСе</p>
+                        <p class="event">Церемония в загс</p>
                     </div>
                     <div class="timeline-item">
                         <p class="time">?</p>
@@ -99,7 +99,7 @@
         </div>
 
         <div class="section" style="background-color: #f0ece3;">
-            <div class="script-text" style="font-size: 2.2rem;">Дресс-код</div>
+            <!-- <div class="script-text" style="font-size: 2.2rem;">Дресс-код</div>
             <p style="font-size: 1rem; margin-bottom: 20px;">
                 Просим вас придерживаться спокойных и простых тонов в одежде (пастельные, бежевые, натуральные).<br><br>Пожалуйста, избегайте ярких цветов. Мы будем рады видеть вас в эстетике нашей свадьбы. <br> Примеры подходящих цветов ниже:
             </p>
@@ -112,7 +112,7 @@
                 <div class="color" style="background-color: #839bbd;"></div>
                 <div class="color" style="background-color: #000000;"></div>
             </div>
-            <div class="divider">♡</div>
+            <div class="divider">♡</div> -->
 
             <div class="script-text" style="font-size: 2.2rem;">Пожелания</div>
             
@@ -134,6 +134,18 @@
         </div>
 
     </div>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Получаем параметры из URL ссылки
+            const urlParams = new URLSearchParams(window.location.search);
+            const guest = urlParams.get('guest');
+            
+            // Если параметр guest есть в ссылке, меняем текст
+            if (guest) {
+                const guestElement = document.getElementById('guest-name');
+                guestElement.textContent = guest + '!';
+            }
+        });
+    </script>
 </body>
 </html>
